@@ -1,20 +1,17 @@
-public class array{ 
-    public static void main(String[] args){  //reversing an array
-        int[] arr = {2,3,4,5,6,7,8,9};
+public class array {
+    public static void main(String[] args){   // two pointers
+        int[] arr ={1,1,2,2,2,3};     // to remove duplicate
         int i=0;
-        int j =arr.length-1;
-        while(i<j){
-            int temp = arr[i];
-            arr[i]=arr[j];
-           arr[j]=temp;     
-            i++;
-            j--;
-        }                      //it will first store arr[7] = 9 like when we do the for loop it will print firstly arr[0] 
-            for (int k=0;k<arr.length;k++){
-            System.out.print(arr[k] +" ");
-        }  // output
-          //  9 8 7 6 5 4 3 2 
-            
-    }}
+        for(int j=1;j<arr.length;j++ ){     // if arr[i]==arr[j] the i will remain same i =0 and j will be 2 because we did not written inside the for loop       
+             if(arr[i]!=arr[j]){         // arr[0] will be remain same because the loop starts at index 1
+                i++;
+               arr[i]=arr[j]; 
+            } }
+            int newlength = i+1;    //+1 because arr[0] we are not included in i so we added 1
+            for(int k=0;k<newlength;k++){
+                System.out.print(arr[k]+" ");
+            }      // output
+                   // 1 2 3 
+    }
 
-
+}
